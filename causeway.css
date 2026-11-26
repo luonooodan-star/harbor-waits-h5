@@ -1,0 +1,57 @@
+:is(#watch-actions,#stair-controls)[hidden],#keeper-beam[hidden]{display:none}
+:is(#watch-actions,#stair-controls){display:flex;align-items:center;justify-content:space-between;gap:8px 20px;margin:.65rem 0 .15rem;flex-wrap:wrap}
+:is(#watch-actions,#stair-controls) p{margin:0;color:#ddd;font:clamp(13px,1.4vw,16px)/1.5 var(--serif)}
+:is(#watch-actions,#stair-controls) div{display:flex;gap:6px;flex-wrap:wrap}
+:is(#watch-actions,#stair-controls) button{min-height:38px;padding:4px 11px;border:1px solid #646464;font-size:13px}
+:is(#watch-actions,#stair-controls) button[aria-pressed=true]{background:#d3d3d3;color:#151515}
+:is(#watch-actions,#stair-controls) button:disabled{opacity:.45}
+#world[data-room=causeway] #actor{bottom:22.2%}
+#world[data-room=causeway] #body{transform-origin:center bottom}
+#world.watch-hiding #body{scale:1 .92}
+#world.watch-quiet:not(.watch-hiding) #body{scale:1 .9}
+#anchor-hauler{position:absolute;height:32%;aspect-ratio:360/356;bottom:25%;transform:translateX(-50%) scaleX(var(--watch-facing,-1));background:url('art/anchor-stride.webp') left bottom/400% 100% no-repeat}
+#watch-child{position:absolute;bottom:23%;height:21%;aspect-ratio:240/416;transform:translateX(-50%) scaleX(var(--child-facing,1));transform-origin:center bottom}
+#watch-child.striding{background-image:url('art/child-stride.webp');background-size:400% 100%}
+#watch-child.striding img{opacity:0}
+#world.watch-hiding #watch-child{scale:1 .85}
+#world #keeper-beam{position:absolute;inset:0;width:100%;height:100%;z-index:1;background:none;clip-path:none;stroke:none;pointer-events:none}
+#world[data-watch=noticed] #keeper-beam path,#world[data-watch=pursuit] #keeper-beam path{stroke:#dfdfdf;stroke-width:.12;stroke-opacity:.5}
+#dike-iron,#dike-cover{display:none;pointer-events:none;position:absolute}
+#world[data-room=causeway] #dike-iron{display:block;bottom:22.8%;left:52%;width:12%;height:1.6%;transform:skew(-35deg);border:1px solid #8c8c8c;border-bottom:2px solid #191919;background:repeating-linear-gradient(95deg,#2d2d2d,#535353 2%,#222 3%,#464646 5%);opacity:.78}
+#world[data-room=causeway] #dike-cover{display:block;inset:0;z-index:3;background:url('art/causeway.webp') center/100% 100%;filter:grayscale(1) contrast(1.09) url(#ink-detail);clip-path:url(#dike-shelters)}
+@media(max-width:680px){:is(#watch-actions,#stair-controls){gap:5px}:is(#watch-actions,#stair-controls) button{min-height:40px}:is(#watch-actions,#stair-controls) p{min-height:1.5em}}
+
+#world[data-room=causeway]:is([data-cover=crates],[data-cover=shrine],[data-cover=winch]) #actor{bottom:25.5%}
+#world.watch-hiding #actor{bottom:26%}
+#world[data-room=causeway]:is([data-cover=crates],[data-cover=shrine],[data-cover=winch]) #watch-child{bottom:26.3%}
+#world[data-room=causeway] #actor{transition:bottom .2s ease-out}
+@media(prefers-reduced-motion:reduce){#world[data-room=causeway] #actor{transition:none}}
+
+#stair-keeper{position:absolute;height:13%;aspect-ratio:260/444;transform:translateX(-50%) scaleX(var(--watch-facing,-1));background:url('art/keeper-stride.webp') left bottom/400% 100% no-repeat}
+#world[data-room=stairs] #body{transform-origin:center bottom}
+#world[data-room=stairs].wall-hidden #body{background:url('art/lin-cover.webp') center bottom/auto 100% no-repeat!important;animation:none!important}
+#rail-glint{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;fill:none;stroke:#eee;stroke-width:.28;stroke-linecap:round;stroke-dasharray:13 110;filter:drop-shadow(0 0 2px #eee)}
+#rail-glint[hidden],#walk-pad button span{display:none}
+#stair-controls{flex-direction:column;align-items:stretch;gap:3px}
+#stair-grip{order:-1;align-items:center}
+#stair-grip #walk-pad{display:flex;gap:6px;margin:0 auto 0 0}
+#stair-grip #walk-pad button{width:auto;display:flex;align-items:center;gap:4px}
+#stair-grip #walk-pad span{display:inline}
+#stair-grip button{min-height:44px}
+#game:has(#world[data-room=stairs]) .field-controls{padding-block:5px}
+@media(max-height:540px) and (orientation:landscape){
+  #game:has(#world[data-room=stairs]) #viewport{height:calc(100svh - 163px - env(safe-area-inset-bottom));min-height:105px}
+  #stair-controls{margin-block:4px 0}
+}
+#world[data-room=stairs] #dike-cover{display:block;position:absolute;inset:0;z-index:3;pointer-events:none;background:url('art/stair-rail.webp') center/100% 100%}
+#game:has(#world[data-room=stairs]) .walk-pad svg{rotate:-90deg}
+
+#quay-chain{display:none}
+#world[data-room=causeway] #quay-chain{display:block;position:absolute;inset:0;width:100%;height:100%;fill:none;pointer-events:none}
+#quay-chain .chain-bed{stroke:#191919;stroke-width:.83}
+#quay-chain .chain-links{stroke:#a5a5a5;stroke-width:.29;stroke-dasharray:.55 .32}
+#world[data-watch=pursuit] .chain-links{stroke:#d9d9d9}
+
+#world[data-room=causeway] #dike-iron{transform-origin:left bottom;transform:skew(-35deg) rotate(-2.2deg);transition:transform .24s}
+#world[data-plate=flex] #dike-iron,#world[data-plate=ring] #dike-iron,#world[data-plate=masked] #dike-iron{transform:skew(-35deg) rotate(.8deg);border-top-color:#d0d0d0}
+#world[data-plate=flex] .chain-links{stroke:#e0e0e0}

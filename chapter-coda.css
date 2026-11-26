@@ -1,0 +1,81 @@
+#chapter-film .coda-chapter{display:none}
+#chapter-film.chapter-coda{background:#121212;color:#e5e5e5}
+#chapter-film.chapter-coda .film-frame{isolation:isolate;overflow:hidden;background:#080808}
+#chapter-film.chapter-coda video{height:min(67dvh,54vw,592px)}
+#chapter-film.chapter-coda footer{display:grid;grid-template-columns:1fr auto auto;gap:7px 18px;align-items:center}
+#chapter-film.chapter-coda .coda-chapter{display:block;grid-column:1;grid-row:1;font:500 13px/1.25 var(--serif);letter-spacing:.12em;color:#b7b7b7}
+#chapter-film.chapter-coda footer p{grid-column:1;grid-row:2;margin:0;font:500 clamp(16px,2.1vw,21px)/1.6 var(--serif)}
+#chapter-film.chapter-coda footer .language-picker{grid-column:2;grid-row:1/3}
+#chapter-film.chapter-coda footer button{grid-column:3;grid-row:1/3;min-height:44px}
+.coda-photo{position:absolute;inset:0;z-index:2;overflow:hidden;background:#121212;opacity:1;container-type:size}
+.coda-photo.dissolve{opacity:0;transition:opacity .36s ease-in}
+.coda-held-frame{height:100%;width:100%;object-fit:contain;background:#090909;container-type:normal}
+/* Camera, objects and scratches belong to the same unwarped painted plate. */
+.coda-composition{position:absolute;left:50%;top:var(--align-y,50%);translate:-50% calc(-1 * var(--align-y,50%));width:max(100cqw,calc(100cqh * var(--plate-ratio,1.7778)));aspect-ratio:var(--plate-ratio,1.7778);overflow:hidden;transform:scale(var(--begin,1.05));transform-origin:var(--aim,50% 50%);animation:coda-camera 2.9s cubic-bezier(.23,.08,.27,1) both}
+.coda-composition>img:first-child{display:block;width:100%;height:100%;object-fit:fill}
+.coda-composition:after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at var(--aim,50% 50%),transparent 40%,#06060660 100%)}
+@keyframes coda-camera{from{transform:scale(var(--begin,1.05))}to{transform:scale(var(--end,1.12))}}
+.coda-prop{position:absolute;pointer-events:none}
+.coda-photo[data-detail=frame]{--begin:1.09;--end:1.18;--aim:50% 68%}
+.coda-photo[data-detail=frame] .coda-prop{width:32%;height:13%;left:34%;top:54.5%}
+.coda-photo[data-detail=bus]{--begin:1.09;--end:1;--aim:42% 42%}
+.coda-photo[data-detail=bus] .coda-prop,.coda-photo .whole-bus{position:absolute;inset:0}
+.coda-door{position:absolute;right:-3%;top:-35%;height:142%;width:auto;transform-origin:right;animation:coda-door-shut 2.45s ease-in-out both;filter:brightness(.58)}
+@keyframes coda-door-shut{from{transform:translateX(24%)}to{transform:translateX(-18%)}}
+.coda-photo[data-detail=stool]{--begin:1.22;--end:1.32;--aim:60% 74%}
+.coda-photo[data-detail=stool] .coda-prop{left:54.5%;top:66%;width:11%;height:20%;filter:drop-shadow(-3px 2px 1px #17171775)}
+.coda-photo[data-detail=stool] .coda-prop img{width:100%;height:100%;object-fit:contain}
+.coda-photo:is([data-detail=family],[data-detail=visitor],[data-detail=signed],[data-detail=kept],[data-detail=register]){--begin:1.04;--end:1.12;--aim:60% 60%}
+.coda-photo:is([data-detail=family],[data-detail=visitor],[data-detail=signed],[data-detail=kept],[data-detail=register]) .coda-prop{inset:25% 18% 16% 20%;color:#3b3b3b;transform:rotate(-.8deg);mix-blend-mode:multiply;font-family:var(--serif);container-type:inline-size}
+.coda-photo:is([data-detail=family],[data-detail=visitor],[data-detail=register]) .coda-prop b{position:absolute;top:21%;left:8%;font-size:8cqw;font-weight:500;letter-spacing:.1em;transform:rotate(-4deg)}
+.coda-photo:is([data-detail=family],[data-detail=visitor]) .coda-prop strong{position:absolute;left:61%;top:53%;padding:.22em .35em;border:3px double #424242;color:#383838;font:700 clamp(12px,3.6cqw,28px)/1.24 var(--serif);transform:rotate(-6deg);animation:coda-ink 1.3s linear both}
+@keyframes coda-ink{from{opacity:.93}to{opacity:.72}}
+.coda-photo[data-detail=ticket]{--begin:1.14;--end:1.22;--aim:53% 83%;--align-y:76%}
+.coda-photo[data-detail=ticket] .coda-composition>img:first-child,.coda-photo[data-detail=button] .coda-composition>img:first-child{object-fit:cover;object-position:50% 79%}
+.coda-photo[data-detail=waterline]{--begin:1.06;--end:1.14;--aim:67% 67%}
+.coda-photo[data-detail=waterline] .coda-prop{left:4%;bottom:3%;width:93%;height:23%;background:url('art/surf-wash.webp') center 32%/100% 80% no-repeat;animation:coda-recede 2.6s ease-out both}
+@keyframes coda-recede{from{opacity:.52;transform:scaleY(1)}to{opacity:.04;transform:scaleY(.58) translateY(-9%)}}
+.coda-photo[data-detail=notches]{--begin:1.24;--end:1.36;--aim:54% 58%}
+.coda-photo[data-detail=notches] .coda-prop{left:52.5%;top:45%;width:4%;height:24%;border-left:1px solid #1115;color:#454545;transform:rotate(1deg)}
+.coda-photo[data-detail=notches] .coda-prop i{display:block;height:1px;width:65%;margin:21% 0;background:#aaa;box-shadow:0 1px #242424}
+.coda-photo[data-detail=notches] .coda-prop i:nth-child(2){width:43%}
+.coda-photo[data-detail=notches] .coda-prop b{position:absolute;left:3%;top:48%;font:500 clamp(8px,1.2vw,14px)/1.2 var(--serif);color:#ccc;white-space:nowrap}
+.coda-photo[data-detail=line]{--begin:1.13;--end:1.24;--aim:30% 51%}
+.coda-photo[data-detail=line] .coda-prop{left:33%;top:49%;width:.55%;height:1.1%;border-radius:50%;background:#e0e0e0;opacity:0;box-shadow:0 0 7px #ecececc7;animation:coda-ring 2.3s ease-out both}
+@keyframes coda-ring{0%,12%,27%,53%,77%,100%{opacity:0}18%,57%{opacity:.85}}
+.coda-photo[data-detail=envelope]{--begin:1.09;--end:1.15;--aim:29% 68%}
+.coda-photo[data-detail=envelope] .coda-prop{left:27%;top:62%;width:8.5%;height:4%;background:linear-gradient(14deg,transparent 45%,#646464 47%,#aaa 49%,transparent 52%),url('art/ledger.webp') 78% 44%/380%;transform:rotate(-4deg) skewX(20deg);filter:drop-shadow(1px 1px 1px #333)}
+.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-composition>img:first-child{filter:brightness(.58)}
+.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop{color:#353535;inset:25% 24% 21% 22%;background:linear-gradient(11deg,#85858524,transparent 45%,#27272716),url('art/ledger.webp') 81% 50%/350%;clip-path:polygon(.5% 1%,18% 2%,33% 0,55% 1%,79% 0,99% 2%,100% 41%,99% 63%,100% 98%,76% 97%,55% 100%,30% 97%,12% 99%,0 98%,.7% 63%);transform:rotate(-3deg);mix-blend-mode:normal}
+.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop:before{content:'';position:absolute;inset:12% 4% 10%;border:1px solid #5252528a;border-top:3px double #454545;opacity:.7;background:linear-gradient(90deg,transparent 52%,#6262626b 52.2%,transparent 52.7%),linear-gradient(transparent 76%,#5555558f 76.7%,transparent 77.2%)}
+.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop small,.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop span{position:absolute;top:28%;left:6%;font-size:3.6cqw}
+.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop b,.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop em{position:absolute;top:39%;left:6%;font-size:7.5cqw;font-weight:500;border-bottom:1px solid #777}
+.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop span,.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop em{left:63%}
+.coda-photo:is([data-detail=signed],[data-detail=kept]) .coda-prop em{min-width:24%;min-height:1.25em;transform:rotate(-5deg);font:500 italic 7.5cqw/1.3 'Kaiti SC','STKaiti','KaiTi',var(--serif)}
+.coda-photo[data-detail=outside]{--begin:1.07;--end:1.15;--aim:86% 43%}
+.coda-photo[data-detail=horn]{--begin:1;--end:1.08;--aim:77% 36%}
+.coda-photo[data-detail=horn] .coda-prop{width:.32%;height:48%;left:69%;top:-5%;background:repeating-linear-gradient(24deg,#5b5b5b 0 2px,#303030 2px 3px);border-radius:0 0 3px 3px;box-shadow:1px 1px #b5b5b54f;transform-origin:50% 0;animation:coda-rope 2.5s ease-out both}
+@keyframes coda-rope{0%{transform:rotate(-6deg)}40%{transform:rotate(3deg)}70%{transform:rotate(-1.3deg)}100%{transform:rotate(.3deg)}}
+.coda-photo[data-detail=jamb]{--begin:1.18;--end:1.27;--aim:64% 69%}
+.coda-photo[data-detail=jamb] .coda-prop{left:63.3%;top:69.8%;width:5.3%;height:.36%;background:#bfbfbf;transform:rotate(-8deg);clip-path:polygon(0 47%,14% 21%,61% 29%,64% 7%,100% 11%,92% 79%,32% 100%)}
+.coda-photo[data-detail=receiver]{--begin:1.12;--end:1.22;--aim:37% 73%}
+.coda-photo[data-detail=button]{--begin:1.06;--end:1.16;--aim:62% 59%}
+.coda-photo[data-detail=register]{--begin:1.12;--end:1.02;--aim:47% 72%}
+.coda-photo[data-detail=register] .coda-prop i{position:absolute;inset:38% 49% 8% -2%;transform:rotate(-6deg);border-bottom:1px solid #737373;background:url('art/ledger.webp') 79% 37%/340%;box-shadow:1px 2px #868686,3px 4px #bfbfbf,4px 5px #858585,5px 6px #aaa,6px 7px #727272}
+.coda-photo[data-detail=register] .coda-prop b{top:45%;left:4%;font-size:6cqw}
+.coda-photo[data-detail=wires]{--begin:1.09;--end:1.2;--aim:73% 46%}
+.coda-photo[data-detail=wires] .coda-prop{left:51.4%;top:66%;display:flex;gap:.25vw}
+.coda-photo[data-detail=wires] .coda-prop i{width:.35vw;height:.35vw;min-width:2px;min-height:2px;border-radius:50%;background:#d1d1d1;box-shadow:0 0 4px #eee;animation:coda-contact .45s ease-out both}
+.coda-photo[data-detail=wires] .coda-prop i:nth-child(2){animation-delay:.28s}
+.coda-photo[data-detail=wires] .coda-prop i:nth-child(3){animation-delay:.56s}
+@keyframes coda-contact{from{opacity:0}to{opacity:.86}}
+#chapter-film.coda-paused :is(.coda-photo,.coda-photo *){animation-play-state:paused!important}
+@media(max-width:580px){
+  #chapter-film.chapter-coda footer{grid-template-columns:1fr auto;gap:5px 10px;padding:12px 16px 16px}
+  #chapter-film.chapter-coda .coda-chapter{grid-row:1;grid-column:1;align-self:center}
+  #chapter-film.chapter-coda footer p{grid-column:1/3;grid-row:2;min-height:3.2em}
+  #chapter-film.chapter-coda footer .language-picker{grid-column:2;grid-row:1;justify-self:end}
+  #chapter-film.chapter-coda footer button{grid-row:3;grid-column:1/3;justify-self:end}
+}
+@media(max-height:500px) and (orientation:landscape){#chapter-film.chapter-coda video{height:57dvh}#chapter-film.chapter-coda footer{padding-block:4px;gap:2px 12px}}
+@media(prefers-reduced-motion:reduce){#chapter-film.chapter-coda :is(.coda-photo,.coda-photo *){animation:none!important;transition:none!important}.coda-door{transform:translateX(-12%)}}

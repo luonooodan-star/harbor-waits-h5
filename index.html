@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#141414">
+  <meta name="description" content="《就等你了》H5 互动恐怖解谜。跟随林遥赴宴，在悬空档案馆核对自己的三次迁居，穿过渡口或排水闸，登上灯塔决定自己的归路。">
+  <title>就等你了 · 雾港档案</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141414'/%3E%3Cpath fill='%23cccccc' d='M9 25h14l-3-13h-8zm3-15h8V7h-8zm-2-5 6-4 6 4z'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="art/harbor.webp">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="returns.css">
+  <link rel="stylesheet" href="route-map.css">
+  <link rel="stylesheet" href="home-objects.css">
+  <link rel="stylesheet" href="switchboard.css">
+  <link rel="stylesheet" href="ending-archive.css">
+  <link rel="stylesheet" href="language.css"><link rel="stylesheet" href="investigations.css"><link rel="stylesheet" href="causeway.css">
+  <link rel="stylesheet" href="lost-property.css"><link rel="stylesheet" href="dock-route.css"><link rel="stylesheet" href="chapter-coda.css">
+  <script defer src="story.js"></script><script defer src="audio.js"></script><script defer src="archive.js"></script><script defer src="finale.js"></script><script defer src="coast-weather.js"></script><script defer src="tower-stairs.js"></script><script defer src="causeway.js"></script><script defer src="returns.js"></script><script defer src="return-journey.js"></script><script defer src="ending-archive.js"></script><script defer src="supper-chair.js"></script><script defer src="home-objects.js"></script><script defer src="switchboard.js"></script><script defer src="route-map.js"></script><script defer src="performance.js"></script><script defer src="cinema.js"></script><script defer src="threshold.js"></script><script defer src="investigations.js"></script><script defer src="lost-property.js"></script><script defer src="dock-route.js"></script><script defer src="game.js"></script><script defer src="harbor-weather.js"></script><script defer src="locales.js"></script><script defer src="lost-property-phrases.js"></script><script defer src="chapter-coda-phrases.js"></script><script defer src="language.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" class="render-filters"><defs><clipPath id="dike-shelters" clipPathUnits="objectBoundingBox"><polygon points="0.0600 0.7400 0.0600 0.6800 0.0830 0.6700 0.0880 0.6100 0.1400 0.5900 0.1800 0.5950 0.2100 0.6070 0.2100 0.6700 0.2270 0.6200 0.2370 0.5800 0.2510 0.5850 0.2300 0.7350"/><polygon points="0.3700 0.7350 0.3730 0.6450 0.3980 0.6300 0.3980 0.5600 0.3900 0.5370 0.3950 0.5350 0.4040 0.5030 0.4100 0.5100 0.4130 0.5200 0.4670 0.5200 0.4770 0.4960 0.4840 0.5100 0.4960 0.5340 0.5010 0.5340 0.4900 0.5640 0.4900 0.6360 0.5180 0.6500 0.5190 0.7340"/><polygon points="0.6400 0.7330 0.6430 0.6500 0.6580 0.6150 0.6800 0.6200 0.7100 0.6110 0.7230 0.5950 0.7410 0.6020 0.7540 0.6100 0.8070 0.6030 0.8200 0.6280 0.8200 0.6570 0.8320 0.6720 0.8350 0.7350"/></clipPath><filter id="ink-detail" color-interpolation-filters="sRGB"><feConvolveMatrix order="3" kernelMatrix="0 -.22 0 -.22 1.88 -.22 0 -.22 0" preserveAlpha="true"/></filter></defs></svg><svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-lighthouse" viewBox="0 0 32 36"><path d="M11 11h10v7H11zM9 10l7-6 7 6ZM8 19h16M12 20l-3 11h14l-3-11M6 32h20M16 4V1M15 12v4M3 13l5 1m16 0 5-1M2 18l6-2m16 0 6 2M15 29v-4h3v4"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14v-3a8 8 0 0 1 16 0v3M4 12h3v8H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 1-2Zm16 0h-3v8h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-1-2Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 3h14v18H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 15h14M8 3v15m3-10h5m-5 4h4"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5Z"/></symbol>
+    <symbol id="i-dial" viewBox="0 0 24 24"><path d="M4 17v-3a8 8 0 0 1 16 0v3Zm8-4 4-4M7 14h1m8 0h1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M5 9h1m3 0h1m3 0h1m3 0h1M5 12h1m3 0h1m3 0h1m3 0h1M7 16h10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12m0-12L6 18"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m14 5-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m10 5 7 7-7 7"/></symbol>
+    <symbol id="i-enter" viewBox="0 0 24 24"><path d="M19 5v10H5m5-5-5 5 5 5"/></symbol>
+  </defs></svg>
+  <header class="mast">
+    <button id="brand" class="brand" aria-label="返回标题画面"><svg><use href="#i-lighthouse"/></svg><span>雾港档案</span></button>
+    <div class="mast-rule"></div>
+    <span class="mast-english en">HARBOR ARCHIVES</span>
+    <nav id="menu-nav" aria-label="游戏导航"><button class="current" id="nav-home">游戏试玩</button><button id="nav-cast">人物手记</button><button id="nav-map">海城地图</button><button id="nav-endings">结局收藏</button></nav>
+    <nav id="game-nav" hidden aria-label="探索菜单"><button id="field-map" aria-label="海城地图"><svg><use href="#i-compass"/></svg></button><button id="journal-button"><svg><use href="#i-book"/></svg>调查笔记</button><button id="pause-button" aria-label="暂停"><svg><use href="#i-pause"/></svg></button></nav>
+    <button id="sound" class="sound" aria-label="开启游戏声音" aria-pressed="false"><span class="levels" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span id="sound-word">声音关</span></button>
+  </header>
+  <main id="home">
+    <section class="hero" aria-labelledby="game-title">
+      <div class="hero-art"><canvas id="harbor-weather" aria-hidden="true"></canvas></div>
+      <div class="lens-wash" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="goldrule"></span><span>海城怪谈</span><span class="eyedot"></span><span>家宴至灯塔</span></div>
+        <h1 id="game-title">就等你了</h1>
+        <div class="en hero-en">WE MADE YOU WELCOME</div>
+        <p class="invitation">“多煮了一碗饭。上来吧，就等你了。”</p>
+        <div class="hero-buttons">
+          <button class="primary" id="start"><svg class="play"><use href="#i-play"/></svg><span>开始游戏</span><svg class="cta-arrow"><use href="#i-arrow"/></svg></button>
+          <button class="secondary" id="chapter-start">选章试玩</button>
+          <button class="secondary help-link" id="help"><svg><use href="#i-key"/></svg>操作说明</button>
+        </div>
+      </div>
+      <div class="hero-meta"><span><svg><use href="#i-pin"/></svg>海城 · 旧港</span><span class="meta-line"></span><span class="en">17:42</span></div>
+    </section>
+    <section class="chapter-section" aria-labelledby="chapters-title">
+      <div class="section-head"><div><span class="section-mark"></span><h2 id="chapters-title">场景索引</h2><span class="en section-en">SCENE INDEX</span></div><span class="chapter-count en">01 <i>/</i> 10</span></div>
+      <button id="case-files" class="secondary">独立案件</button>
+      <div id="chapter-list" class="chapter-list"></div>
+    </section>
+  </main>
+  <main id="game" hidden>
+    <div class="scene-bar"><span class="eyebrow" id="scene-number"></span><h1 id="scene-name"></h1><span id="scene-time" class="en"></span></div>
+    <div id="viewport" tabindex="0" role="region" aria-label="游戏场景，方向键移动，E 调查">
+      <div id="world"><img id="backdrop" alt=""><canvas class="coast-layer" id="field-weather" aria-hidden="true" hidden></canvas><i id="carried-light" aria-hidden="true"></i><svg class="pane-crack" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M14 0 30 23 22 39 48 56 51 77 74 100 M30 23 54 30 69 24 M48 56 67 49 92 61"/></svg><i id="lamp-patch" aria-hidden="true"></i><div id="flood"></div><div id="reflection"></div><i id="floor-ticket" aria-hidden="true"></i><div id="glass-echo" aria-hidden="true"><i></i></div><div id="door-latch" aria-hidden="true"></div><div id="shift-board" aria-label="渡口值班牌"><small>当班</small><b></b><i></i></div><div id="room-furniture" hidden></div><div id="figures"></div><span id="old-pier-board" aria-hidden="true">旧渡口</span><div id="dike-iron" aria-hidden="true"></div><svg id="quay-chain" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="chain-bed"/><path class="chain-links"/></svg><svg id="keeper-beam" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" hidden><defs><linearGradient id="lantern-ray" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".74"/><stop offset=".38" stop-color="#f4f4f4" stop-opacity=".31"/><stop offset="1" stop-color="#e5e5e5" stop-opacity=".09"/></linearGradient></defs><path fill="url(#lantern-ray)"/><ellipse fill="#f1f1f1" opacity=".28"/></svg><div id="actor"><div id="body"></div></div><div id="dike-cover" aria-hidden="true"></div><svg id="rail-glint" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" hidden><path pathLength="100" d="M 8 87.05 L 17.8 87.05 Q 18.05 85.7 19.05 85.1 L 50 71.7"/></svg><div id="spots"></div></div>
+      <div class="vignette"></div><div id="scene-flash" hidden></div>
+    </div>
+    <div id="watch-actions" hidden><p id="watch-sense" role="status"></p><div><button id="watch-quiet" aria-pressed="false">放轻脚步</button><button id="watch-stop" hidden>收脚</button><button id="watch-lead" hidden>请测潮婆抛铅坠</button><button id="watch-listen" hidden>听下一拍潮声</button></div></div>
+    <div id="stair-controls" hidden><p id="stair-sense" role="status"></p><div id="stair-grip"><button id="stair-duck" aria-pressed="false">贴墙屏息</button><button id="stair-listen" hidden>听一次灯轴声</button></div></div>
+    <div class="field-controls">
+      <details class="current-task" id="hint"><summary>需要一点提示</summary><strong id="objective"></strong></details>
+      <div class="walk-pad" id="walk-pad"><button id="walk-left" aria-label="向左走"><svg><use href="#i-left"/></svg><span>下楼</span></button><button id="walk-right" aria-label="向右走"><svg><use href="#i-right"/></svg><span>上楼</span></button></div>
+      <button class="inspect" id="inspect"><span class="keycap">E</span><span id="inspect-label">调查</span></button>
+    </div>
+    <div class="game-hint"><span>点击场景中的菱形标记，林遥会走到物件旁调查。</span><span class="en">A / D <span>移动</span> · J <span>笔记</span></span></div>
+  </main>
+  <dialog id="panel"><div id="panel-inner"></div></dialog>
+  <div id="announce" role="status" aria-live="polite"></div>
+<dialog id="chapter-film" aria-label="章节过场"><div class="film-frame"><video playsinline preload="metadata" disablepictureinpicture></video><canvas class="coast-layer" id="film-weather" aria-hidden="true" hidden></canvas></div><footer><p aria-live="polite"></p><button type="button">跳过片段</button></footer></dialog>
+</body>
+</html>

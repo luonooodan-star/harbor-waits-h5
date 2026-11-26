@@ -1,0 +1,119 @@
+#case-files {margin:0 0 16px;}
+.case-files {display:grid;gap:12px;}
+.case-files button {display:flex;align-items:center;border:1px solid #606060;text-align:start;}
+.case-files img {width:36%;aspect-ratio:16/9;object-fit:cover;}
+.case-files span {padding:12px;display:grid;gap:6px;}
+.case-files b {font:600 22px var(--serif);}
+.case-files small {color:#bbb;}
+.case-peek,.case-casing,.lamp-copy,.night-face,.supper-inquest {position:relative;isolation:isolate;overflow:hidden;aspect-ratio:16/9;border:1px solid #555;}
+.case-peek {background:#151515;--glass-x:26.87%;--glass-y:5.79%;--glass-w:25.34%;--glass-h:33.23%;--sea-reveal:1;--gap:0%;}
+.peek-hall {position:absolute;inset:0;background:url('art/dryhall.webp') center/cover;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 0,calc(39% - var(--gap)*.36) 0,calc(39% - var(--gap)*.36) 100%,calc(39% + var(--gap)*.48) 100%,calc(39% + var(--gap)*.48) 0);}
+.case-slider {display:grid;gap:8px;margin:16px 0;}
+.case-slider input {width:100%;accent-color:#ccc;}
+.case-casing,.night-face {background:url('art/switchboard.webp') center/100% 100%;}
+.case-casing {touch-action:none;cursor:crosshair;--finger:12%;--strength:.08;}
+.case-casing i {position:absolute;left:var(--finger);top:45%;width:13%;aspect-ratio:1;transform:translate(-50%,-50%);border:2px solid #eee;border-radius:50%;opacity:calc(.25 + var(--strength)*.75);box-shadow:0 0 0 5px #ccc6,0 0 0 10px #eee3;}
+.case-casing b {position:absolute;bottom:6%;left:25%;width:50%;border-bottom:3px double #eee;transform:scaleX(var(--strength));}
+.lamp-copy {background:url('art/archive.webp') center/cover;}
+.lamp-child {position:absolute;bottom:7%;left:11%;height:72%;transition:left .55s;}
+.lamp-copy[data-side=far] .lamp-child {left:68%;height:55%;}
+.lamp-slip {position:absolute;left:36%;bottom:10%;width:31%;height:21%;background:#888;transform:skew(-16deg) rotate(-5deg);border:2px solid #555;display:grid;place-content:center;color:#222;font:600 clamp(11px,2.5vw,18px) var(--serif);}
+.lamp-copy.lit .lamp-slip {background:linear-gradient(110deg,#737373,#e1e1e1,#777);text-shadow:0 1px #ddd;}
+.night-face button {position:absolute;top:33%;height:28%;width:14%;transform:translateX(-50%);display:flex;align-items:flex-end;justify-content:center;color:white;text-shadow:0 0 3px black;font-weight:700;z-index:1;}
+.night-face button[aria-pressed=true] {border-bottom:3px double #ddd;}
+.night-face img {position:absolute;top:43.3%;width:9%;transform-origin:98% 50%;transform:translate(-98%,-50%) rotate(-72deg);pointer-events:none;}
+.case-tools,.evidence-list {display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;}
+.case-tools button,.evidence-list button,.supper-inquest button {border:1px solid #777;background:#181818ed;padding:8px;text-align:start;min-height:40px;}
+.case-tools [aria-pressed=true],.evidence-list [aria-pressed=true] {background:#ccc;color:#171717;}
+.supper-inquest {background:url('art/dinner.webp') center/cover;}
+.supper-inquest button {position:absolute;font-size:clamp(11px,2.6vw,15px);max-width:43%;line-height:1.2;}
+.supper-inquest [data-evidence="0"] {top:42%;left:25%;}
+.supper-inquest [data-evidence="1"] {top:57%;right:12%;}
+.supper-inquest [data-evidence="2"] {bottom:2%;left:5%;}
+.supper-inquest [aria-pressed=true] {border-style:double;}
+.shift-log {position:relative;max-height:30svh;overflow:auto;padding-inline-start:2.3em;line-height:1.65;}
+.shift-log .current {background:#ddd;color:#171717;}
+:lang(en) .panel-actions,:lang(en) .case-tools {flex-wrap:wrap;}
+:lang(zh-TW) {font-variant-east-asian:traditional;}
+@media(prefers-reduced-motion:reduce){.lamp-child {transition:none;}}
+.case-casing[data-material=doorEar] {background-image:url('art/threshold-door.webp');}
+.case-casing[data-material=pipe] {background-image:url('art/room.webp');background-size:195%;background-position:70% 9%;}
+.glyph-reading {margin:.5em 0;color:#ccc;}
+.glyph-reading summary {cursor:pointer;}
+.glyph-reading figure {display:flex;align-items:center;gap:1em;margin:.5em 0;}
+.glyph-reading figure b {font:36px var(--serif);}
+.night-line::after {content:'';position:absolute;left:64%;top:28%;width:2.5%;aspect-ratio:1;background:#eee;border-radius:50%;box-shadow:0 0 10px #eee;animation:night-pulse .35s ease-in-out 2 alternate;}
+.night-line[data-signal=long]::after {left:34%;animation-duration:1s;animation-iteration-count:1;}
+@keyframes night-pulse {from {opacity:.2;}to {opacity:1;}}
+@media(prefers-reduced-motion:reduce){.night-line::after {animation:none;}}
+.peek-jamb,.peek-edge {position:absolute;inset-block:0;width:clamp(4px,1.4%,9px);pointer-events:none;background:linear-gradient(90deg,#0c0c0c,#535353 38%,#222 62%,#111);box-shadow:3px 0 6px #0009;}
+.peek-jamb {left:calc(39% - var(--gap)*.36 - 4px);}
+.peek-edge {left:calc(39% + var(--gap)*.48);box-shadow:-5px 0 10px #000b;}
+.night-face canvas {position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#world.landing-blackout #backdrop {filter:brightness(.22) grayscale(1);}
+#world.landing-blackout #actor {filter:brightness(.43);}
+#world.lamp-failing #backdrop {animation:contact-failure 1.3s linear both;}
+@keyframes contact-failure {0%{filter:brightness(.88)}38%{filter:brightness(.52)}57%{filter:brightness(.70)}100%{filter:brightness(.22)}}
+#viewport.trip-shudder {animation:trip-shudder .38s .94s ease-out;}
+@keyframes trip-shudder {25%{transform:translate(2px,1px)}58%{transform:translate(-2px,0)}82%{transform:translate(1px,-1px)}}
+#light-search {position:relative;aspect-ratio:16/9;overflow:hidden;isolation:isolate;touch-action:none;cursor:crosshair;background:#181818 url('art/hall.webp') center/cover;--aim:12%;}
+#light-search>* {position:absolute;pointer-events:none;}
+.rail-wrap {left:42%;top:62%;width:3%;height:5%;background:repeating-linear-gradient(116deg,#aaa 0 2px,#646464 2px 4px);transform:rotate(-17deg);}
+.torch-dark {inset:0;background:radial-gradient(ellipse 19% 34% at var(--aim) 64%,transparent 5%,#06060628 47%,#070707ec 99%);}
+.hand-lamp :is(.emergency-cone,.luggage-tag){display:none;}
+.fixed-lamp {background-position:75% 50%!important;background-size:145%!important;}
+.fixed-lamp .rail-wrap {display:none;}
+.fixed-lamp .torch-dark {background:radial-gradient(ellipse 19% 70% at 70% 45%,#1111 12%,#070707d9 95%);}
+.emergency-cone {inset:0;background:linear-gradient(160deg,#eee4,transparent 75%);clip-path:polygon(58% 0,60% 0,86% 84%,66% 86%);}
+.luggage-tag {left:var(--aim);top:61%;width:18%;height:18%;transform:translateX(-50%) rotate(-8deg);background:linear-gradient(110deg,#565656,#aaa);border:1px solid #555;display:grid;place-items:center;font:600 clamp(13px,3vw,21px) var(--serif);}
+.luggage-tag span {opacity:0;color:#242424;}
+.in-light .luggage-tag span {opacity:1;text-shadow:0 1px #ddd;}
+.passing-shadow:before {content:'';position:absolute;inset:0 auto 0 8%;width:8%;background:linear-gradient(90deg,transparent,#111c,transparent);animation:shadow-passes 1s ease-out both;}
+@keyframes shadow-passes {0%{opacity:0}35%{opacity:.85}100%{transform:translateX(120%);opacity:0}}
+@media(prefers-reduced-motion:reduce){#world.lamp-failing #backdrop,#viewport.trip-shudder,.passing-shadow:before {animation:none;}.passing-shadow:before{display:none;}}
+#carried-light {display:none;position:absolute;inset:0;pointer-events:none;background:url('art/hall.webp') center/100% 100%;mask-image:radial-gradient(ellipse 11% 18% at var(--torch-x,36%) 64%,#000 12%,#0009 52%,transparent);}
+#world.torch-carried #carried-light {display:block;}
+#light-aim {accent-color:#bbb;filter:grayscale(1);}
+#light-aim:focus-visible {outline:2px solid #aaa;outline-offset:3px;}
+.render-filters {position:absolute;width:0;height:0;pointer-events:none;}
+/* The white cut edge is part of each transparent pose, including speaking and walking. */
+#game #world #body,#game #world .resident,.profile img,.photo-proof img,.lamp-child {filter:grayscale(1) contrast(1.04);}
+#game #backdrop {filter:grayscale(1) contrast(1.09) url(#ink-detail);}
+#game #world.landing-blackout #backdrop {filter:grayscale(1) brightness(.22) url(#ink-detail);}
+#world[data-ending=aunt] #actor,#world[data-ending=names] #actor {visibility:hidden;}
+#game:has(#world:is([data-ending=aunt],[data-ending=names])) .walk-pad {display:none;}
+details.current-task summary {cursor:pointer;color:#ccc;font-size:14px;}
+details.current-task:not([open]) #objective {display:none;}
+#game:not(:has(#hint[open])) .spot:not(:hover):not(:focus-visible) .spot-label {opacity:0;}
+#lamp-patch {position:absolute;inset:0;pointer-events:none;display:none;background-size:100% 100%;mask-image:radial-gradient(ellipse 9% 18% at var(--lx) var(--ly),black 54%,transparent);transform-origin:var(--lx) 0%;animation:pendant-sway 5.8s ease-in-out infinite alternate,pendant-contact 13.7s linear infinite; filter:grayscale(1) url(#ink-detail);}
+#world[data-room=room] #lamp-patch {display:block;--lx:73%;--ly:15%;}
+#world[data-room=hall] #lamp-patch {display:block;--lx:59%;--ly:18%;animation-delay:-2.2s,-5s;}
+#world[data-room=landing]:not(.landing-blackout) #lamp-patch {display:block;--lx:54%;--ly:16%;}
+@keyframes pendant-sway {from{transform:rotate(-1.9deg)}to{transform:rotate(2.5deg)}}
+@keyframes pendant-contact {0%,68%,80%,100%{filter:grayscale(1) brightness(1.04) url(#ink-detail)}72%{filter:grayscale(1) brightness(.62)}75%{filter:grayscale(1) brightness(.85)}77%{filter:grayscale(1) brightness(.73)}}
+.short-passage video {display:none!important;}
+.passage-still {position:relative;height:min(59dvh,54vw);overflow:hidden;background:#111;}
+.passage-still img {position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
+.passage-still>:nth-child(2) {animation:passage-arrival 1s ease both;}
+@keyframes passage-arrival {0%,16%{opacity:0}100%{opacity:1}}
+.tide-grille{position:relative;aspect-ratio:16/9;background:#252525;overflow:hidden}
+/* A close look at the left jamb, keeping the engraved masonry at its native scale. */
+.grille-study{position:absolute;width:270.27%;height:270.27%;left:-162.16%;top:-118.92%;background:url('art/culvert.webp') center/100% 100%}
+.tide-grille b{position:absolute;left:9%;top:70%;width:15%;height:1.15%;opacity:var(--chalk,0);background:#dadada;transform:rotate(-7deg);clip-path:polygon(0 35%,12% 18%,15% 46%,23% 20%,47% 31%,51% 5%,75% 19%,77% 38%,100% 10%,96% 70%,78% 87%,64% 67%,41% 97%,20% 78%,4% 95%)}
+.grille-surface{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.tide-feedback{min-height:1.5em}
+@media(prefers-reduced-motion:reduce){#world #lamp-patch,.passage-still>:nth-child(2) {animation:none;}}
+#world .pane-crack {display:none;position:absolute;left:29.8%;top:11%;width:4.5%;height:9%;stroke:#c7c7c7;stroke-width:1.1;fill:none;opacity:.65;pointer-events:none;}
+#world:is([data-room=room],[data-room=dinner]) .pane-crack {display:block;}
+#game:not(:has(#hint[open])) .spot.within-reach .spot-label {opacity:1;}
+#game:has(#world:is([data-ending=aunt],[data-ending=names])) #viewport {height:auto;min-height:0;aspect-ratio:16 / 9;}
+.ending-coda {border-inline-start:2px solid #888;margin:1.2em 0;padding-inline-start:1em;font:1.04em/1.7 var(--serif);color:#dedede;}
+
+.passage-still{container-type:size}.passage-room{position:absolute;inset:0;display:grid;place-items:center}.passage-interior{position:relative;aspect-ratio:1176/656;width:min(100cqw,179.268cqh)}
+
+/* Unidentified leaves in the same worn paper stock as the archive. */
+.cast-trace{position:relative;width:95%;aspect-ratio:3/4;overflow:hidden;background:url('art/ledger.webp') 83% 77%/340%;clip-path:polygon(2% 1%,39% 2%,60% 0,97% 2%,100% 34%,97% 51%,99% 79%,94% 98%,72% 96%,65% 100%,26% 97%,1% 99%,3% 66%,0 43%);transform:rotate(-3deg)}
+.cast-trace.anchor i{position:absolute;inset:-12%;background:url('art/erased-entry.webp') 44% 86%/230%;transform:rotate(-17deg);filter:contrast(1.15)}
+.cast-trace.keeper i{position:absolute;inset:0;background:radial-gradient(ellipse at 78% 12%,#191919e8 3%,#242424ce 12%,#3737376b 24%,transparent 46%),radial-gradient(ellipse at 100% 34%,#282828a3,transparent 28%);mix-blend-mode:multiply}
+.chapter-text .trial-stop{display:block;margin-top:4px;font-size:.8rem;line-height:1.4;color:#ccc;letter-spacing:.02em}
+.chapter-text .trial-stop[hidden]{display:none}

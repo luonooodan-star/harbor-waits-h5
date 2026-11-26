@@ -1,0 +1,14 @@
+.language-picker {color:#dedede;background:#1b1b1b;border:1px solid #555;border-radius:2px;font:inherit;font-size:12px;min-height:30px;max-width:7em;}
+#panel > .language-picker {display:block;margin:8px 12px 0 auto;}
+html[lang=en] :is(.mast-english,.hero-en,.section-en){display:none;}
+html[lang=en] .hero h1 {font-size:clamp(44px,6.6vw,100px);letter-spacing:-.035em;line-height:1.02;max-width:10em;text-wrap:balance;}
+html[lang=en] .hero-content {max-width:min(94%,52em);}
+html[lang=en] .chapter strong {letter-spacing:normal;}
+@media(max-width:700px){
+  .mast {gap:6px;}
+  .mast nav {min-width:0;overflow-x:auto;}
+  .mast nav button {flex-shrink:0;}
+  .mast .language-picker {flex-shrink:0;font-size:11px;}
+  html[lang=en] .brand span {display:none;}
+  html[lang=en] .hero-buttons {flex-wrap:wrap;}
+}

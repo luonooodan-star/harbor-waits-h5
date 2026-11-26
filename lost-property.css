@@ -1,0 +1,100 @@
+/* The caller is on the other side of the painted ticket window. The metal
+   frame and the sill remain in the foreground, even on the approach. */
+.dock-glazing{position:absolute;left:60.2273%;top:32.3061%;width:26.9737%;height:24.1233%;overflow:hidden;pointer-events:none;isolation:isolate}
+.dock-glass-figure{position:absolute;max-width:none;object-fit:contain;transform-origin:50% 65%;left:59%;top:32%;height:104%;width:auto;transform:translateX(-50%);opacity:.12;filter:grayscale(1) brightness(.55);transition:top 1s ease-out,height 1s ease-out,left 1.15s ease-in-out,opacity .8s,filter .8s}
+.dock-glazing::after{content:'';position:absolute;inset:0;background:url('art/queue-glass.webp') center/100% 100% no-repeat}
+.dock-glazing[data-visitor=lean] .dock-glass-figure{left:53%;top:26%;height:118%;opacity:.58;filter:grayscale(1) brightness(.79)}
+.dock-glazing[data-visitor=near] .dock-glass-figure{left:50%;top:21%;height:135%;opacity:.92;filter:grayscale(1) brightness(.93)}
+.dock-glazing[data-visitor=gone] .dock-glass-figure{opacity:0;visibility:hidden}
+.dock-seat-numbers{position:absolute;inset:0;pointer-events:none;container-type:inline-size}
+.dock-seat-numbers b{position:absolute;top:61%;transform:translate(-50%,-50%);color:#272727;font:700 .96cqw/1 Georgia,serif;letter-spacing:.035em;mix-blend-mode:multiply}
+.dock-dialog{width:min(710px,calc(100% - 20px));max-height:94svh}
+.dock-dialog #panel-inner{padding:clamp(14px,2.6vw,27px)}
+.dock-dialog .panel-top{margin-bottom:5px}
+.dock-dialog .panel-title{font-size:clamp(22px,3.5vw,30px);line-height:1.2;margin:0 0 13px}
+.dock-dialog .panel-actions:empty,.dock-tools:empty{display:none}
+.dock-feedback{margin:12px 0 8px;color:#dedede;font:400 clamp(15px,1.75vw,18px)/1.65 var(--serif);min-height:1.7em}
+.dock-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;justify-content:flex-end}
+.dock-tools button{min-height:42px;border:1px solid #717171;padding:8px 13px;color:#dedede}
+.dock-tools button:hover,.dock-tools button:focus-visible{border-color:#e2e2e2}
+.dock-tools .accent{background:#d1d1d1;color:#222}
+.dock-bench-view,.dock-tray,.dock-item-study,.dock-evidence-stage,.dock-light-table,.dock-lining{position:relative;overflow:hidden;isolation:isolate;background-color:#202020;width:100%;border:1px solid #555}
+.dock-bench-view{aspect-ratio:16/10;container-type:inline-size}
+.dock-bench-room{position:absolute;inset:0 0 10%;background:url('art/waiting-room.webp') center/100% 100% no-repeat}
+.dock-seat-edge{position:absolute;bottom:0;left:-1%;width:103%;height:25%;background:linear-gradient(176deg,#8b8b8b26,#1118 30%,#1b1b1b33 67%,#0c0c0ccf 96%),url('art/frameback.webp') 51% 63%/220% 490%;box-shadow:inset 0 3px 1px #a7a7a738,0 -2px 3px #0b0b0ba6;transform:rotate(-1.1deg)}
+.dock-seat-edge::before{content:'';position:absolute;left:41%;top:16%;width:35%;height:4px;transform:rotate(.5deg);background:#141414;box-shadow:0 2px 0 #8886}
+.dock-seat-edge::after{content:'17';position:absolute;left:29%;top:18%;border:1px solid #9995;background:#272727d6;color:#999;font:600 4.2cqw/1 var(--serif);padding:1.3% 1.4%;transform:rotate(1deg)}
+.dock-seat-edge i{position:absolute;left:23%;right:13%;top:10%;height:1px;background:linear-gradient(90deg,#bdbdbda8 0 15%,#484848 23% 59%,#aaa 84%,#222);transform:rotate(-8deg);transform-origin:82% 50%}
+.dock-machine{position:absolute;left:4.5%;bottom:4%;width:18.5%;height:23%;background:linear-gradient(140deg,#9f9f9f44,#0a0a0a66 67%),url('art/frameback.webp') 24% 65%/400% 800%;border:1px solid #737373;border-radius:6% 5% 7% 4%;box-shadow:inset 2px 2px 0 #a7a7a760,inset -2px -3px 0 #111,3px 4px 4px #121212b8}
+.dock-machine::before,.dock-machine::after{content:'';position:absolute;top:5%;width:4px;height:4px;border-radius:50%;background:linear-gradient(45deg,#999 40%,#2b2b2b 43% 58%,#777 61%)}
+.dock-machine::before{left:6%}.dock-machine::after{right:6%}
+.dock-meter{position:absolute;left:13%;top:11%;width:74%;height:53%;display:flex;gap:7%;align-items:center;justify-content:center;border:2px inset #555;background:linear-gradient(#0e0e0e,#333 49%,#191919 53%,#242424);box-shadow:inset 0 0 6px #000}
+.dock-meter b{color:#e0e0e0;font:700 5cqw/1 var(--serif);letter-spacing:.05em;text-shadow:1px 1px #151515}
+.dock-meter i{width:10%;aspect-ratio:1;display:block;border-radius:50%;background:#666;border:1px solid #4f4f4f}
+.dock-bench-view[data-call="17"] .dock-meter i{background:#ededed;box-shadow:0 0 7px #eee9}
+#dock-lever{position:absolute;left:4%;bottom:-4%;width:91%;height:46%;min-height:31px;touch-action:manipulation}
+#dock-lever i{position:absolute;left:20%;top:43%;width:61%;height:20%;border:1px solid #858585;border-radius:35%;background:linear-gradient(#b6b6b6,#666 32%,#2c2c2c 69%,#999);box-shadow:2px 3px 2px #111c;transform:rotate(-8deg)}
+#dock-lever:active i{transform:rotate(5deg)}
+.dock-ticket-tip{position:absolute;left:53%;bottom:1%;width:19%;height:18%;touch-action:none;z-index:2;transform:translateY(var(--pull,0px));cursor:grab}
+.dock-ticket-tip i{display:grid;place-items:center;position:absolute;left:6%;right:11%;top:2%;height:44%;background:linear-gradient(#1515158a,transparent 29%),url('art/ledger.webp') 72% 68%/410%;color:#3b3b3b;font:600 3.2cqw/1 var(--serif);letter-spacing:.18em;clip-path:polygon(0 2%,97% 0,99% 56%,94% 68%,99% 79%,94% 96%,73% 90%,64% 98%,39% 92%,31% 100%,2% 94%);transition:height .36s}
+.dock-bench-view[data-open=true] .dock-ticket-tip i{height:78%}
+.dock-bench-view[data-gripped=true] .dock-ticket-tip i{box-shadow:inset 0 -3px #ededed;transform:rotate(-3deg)}
+.dock-bench-view.tugged .dock-ticket-tip i{animation:dock-paper-tug .32s ease-in-out}
+@keyframes dock-paper-tug{30%{transform:translateY(-6px) rotate(3deg)}75%{transform:translateY(1px) rotate(-2deg)}}
+.dock-tray{aspect-ratio:3/2;background:url('art/lost-tray.webp') center/100% 100%}
+.dock-tray-item{position:absolute;top:26%;height:65%;width:30%;transform:translateX(-50%);border:0;touch-action:manipulation}
+.dock-tray-item span{position:absolute;top:66%;left:24%;width:52%;color:#252525;font:600 clamp(10px,1.8vw,17px)/1.05 var(--serif);overflow-wrap:anywhere;transform:rotate(-2deg)}
+.dock-tray-item:focus-visible{outline:1px dashed #ddd;outline-offset:-2px}
+.dock-tray-item:hover span,.dock-tray-item:focus-visible span{text-decoration:underline}
+.dock-item-study{aspect-ratio:3/2;background-image:url('art/lost-tray.webp');background-size:175%;background-position-y:58%;background-repeat:no-repeat}
+.dock-item-whistle{background-position-x:0}.dock-item-sewing{background-position-x:52%}.dock-item-keys{background-position-x:100%}
+.dock-turn-tag,.dock-unfold{position:absolute;inset:0;width:100%;height:100%;touch-action:manipulation}
+.dock-turn-tag:focus-visible,.dock-unfold:focus-visible{outline-offset:-4px}
+.dock-evidence-stage{aspect-ratio:1.98;background:linear-gradient(#19191950,#1c1c1c64),url('art/lost-tray.webp') 95% 2%/290%}
+.dock-light-table{--paper-left:58%;aspect-ratio:1.75;background:radial-gradient(ellipse at 36% 53%,#e9e9e9 6%,#b0b0b0 35%,#aaa8 58%,#3c3c3c 83%),url('art/ledger.webp') 78% 60%/200%;box-shadow:inset 0 0 0 3px #333,inset 0 0 22px #2228}
+.dock-paper{position:absolute;container-type:inline-size;isolation:isolate;display:block;overflow:hidden;color:#292929;--hole-a:32% 26%;--hole-b:67% 36%;--paper-edge:polygon(1% 12%,12% 2%,45% 1%,88% 2%,98% 12%,99% 46%,84% 53%,98% 58%,99% 89%,95% 97%,83% 95%,78% 98%,51% 96%,43% 99%,1% 97%);clip-path:var(--paper-edge);background:linear-gradient(97deg,#34343426,transparent 27%,#2b2b2b14 48%,#c1c1c121 51%,transparent 87%,#43434326),url('art/ledger.webp') 75% 70%/310% 490%;mask-image:radial-gradient(circle at var(--hole-a),transparent 0 2.1%,#000 2.5%),radial-gradient(circle at var(--hole-b),transparent 0 2.1%,#000 2.5%);mask-composite:intersect}
+.dock-tag-whistle{--hole-b:-25% -25%;--paper-edge:polygon(1% 12%,12% 2%,86% 2%,99% 12%,99% 97%,2% 99%)}
+.dock-tag-keys{--hole-b:67% 26%;--paper-edge:polygon(1% 12%,12% 2%,89% 2%,99% 12%,99% 45%,87% 45%,87% 54%,99% 54%,98% 98%,2% 97%)}
+.dock-print{position:absolute;inset:4% 8%;display:flex;flex-flow:column;justify-content:flex-end;align-items:center;text-align:center;font-family:var(--serif);line-height:1.08;overflow:hidden}
+.dock-print::before{content:'';position:absolute;top:10%;width:8%;aspect-ratio:1;border:1px solid #424242;border-radius:50%;background:#3a3a3a;box-shadow:0 0 0 2px #7776}
+.dock-print small{font-size:clamp(10px,8cqw,19px);border-top:1px solid #5555;padding-top:7%;max-width:96%}
+.dock-print b{font-size:clamp(26px,30cqw,61px);line-height:1.06;letter-spacing:.07em}
+.dock-print>span{font:500 clamp(10px,9cqw,18px)/1.3 var(--mono);letter-spacing:.13em;margin:4% 0 6%}
+.dock-stub-print,.dock-isolated-tag{width:24%;height:81%;left:38%;top:9.5%;transform:rotate(-5deg)}
+.dock-inspected-tag{width:22%;height:66%;left:68%;top:21%;transform:rotate(8deg);filter:brightness(1.12)}
+.dock-punch-ring{position:absolute;border:1px dashed #3d3d3d;width:13%;height:8%;right:6%;top:33%;border-radius:50%}
+.dock-pair-base,.dock-pair-slip{width:30%;height:78%;top:10%}
+.dock-light-table::before{content:'';position:absolute;left:19%;top:10%;width:30%;height:78%;background:radial-gradient(circle at 32% 26%,#fff 0 3.5%,#fff8 6%,transparent 13%),radial-gradient(circle at 67% 36%,#fff 0 3.5%,#fff8 6%,transparent 13%)}
+.dock-light-table .dock-paper{background-color:#c5c5c5;background-blend-mode:multiply;mask-image:radial-gradient(circle at var(--hole-a),transparent 0 2.8%,#000 3.2%),radial-gradient(circle at var(--hole-b),transparent 0 2.8%,#000 3.2%)}
+.dock-pair-base{left:19%;filter:brightness(.80)}
+.dock-pair-slip{left:var(--paper-left);cursor:grab;touch-action:none}
+.dock-pair-slip:active{cursor:grabbing}
+.dock-light-table[data-fit=yes]{box-shadow:inset 0 0 0 3px #777,inset 0 0 22px #2228}
+.dock-align{display:flex;min-height:40px;gap:15px;align-items:center;margin-top:10px;font:500 15px var(--sans)}
+.dock-align input{accent-color:#c9c9c9;flex:1;min-width:0;height:30px}
+.dock-lining{aspect-ratio:1.65;background:url('art/lost-tray.webp') 52% 43%/268%}
+.dock-letter-corner{left:49%;top:47%;width:20%;height:33%;transform:rotate(-12deg);clip-path:polygon(4% 28%,88% 1%,100% 79%,15% 100%);mask:none;box-shadow:inset 16px 8px 10px #2a2a2a77}
+.dock-letter-corner .dock-print::before{display:none}
+.dock-letter{padding:8% 9% 6%;background:linear-gradient(99deg,transparent 46%,#5553 49%,#ddd8 50%,transparent 53%),url('art/ledger.webp') 80% 71%/300% 600%;color:#222;font-family:var(--serif);clip-path:polygon(1% 1%,31% 2%,49% 0,72% 2%,99% 1%,100% 97%,75% 99%,55% 97%,36% 100%,1% 97%)}
+.dock-letter-head{display:flex;justify-content:space-between;gap:.5em;align-items:center;border-bottom:1px solid #4447;padding-bottom:.6em;font-size:clamp(13px,1.8vw,17px)}
+.dock-letter p{font-size:clamp(19px,3vw,28px);line-height:1.7;letter-spacing:.04em;margin:.8em 0}
+.dock-letter footer{text-align:right;font-size:clamp(16px,2.2vw,23px);font-weight:600}
+html[lang=en] .dock-letter p{letter-spacing:normal;line-height:1.36}
+@media(max-height:520px) and (orientation:landscape){
+ .dock-dialog{width:min(94vw,940px);max-height:96svh}
+ #panel.dock-dialog>.language-picker{position:absolute;right:65px;top:8px;z-index:2;margin:0}
+ .dock-dialog #panel-inner{display:grid;grid-template-columns:minmax(0,min(58%,calc(144svh - 94px))) minmax(0,1fr);grid-template-rows:repeat(6,auto);align-content:start;align-items:start;gap:0 clamp(12px,2.4vw,26px);padding:8px 16px 13px}
+ .dock-dialog .panel-top{grid-column:1/-1;grid-row:1;margin:0 0 7px}
+ .dock-dialog .panel-title{grid-column:2;grid-row:2;align-self:end;font-size:clamp(19px,3vw,25px);margin:2px 0 6px}
+ .dock-dialog :is(.dock-bench-view,.dock-tray,.dock-item-study,.dock-evidence-stage,.dock-light-table,.dock-lining,.dock-letter){grid-column:1;grid-row:2/7;width:100%;margin-inline:0;align-self:center}
+ .dock-dialog :is(.dock-feedback,.dock-align,.dock-tools,.panel-actions){grid-column:2}
+ .dock-dialog .dock-align{grid-row:3;font-size:14px;gap:7px;margin:0}
+ .dock-dialog .dock-feedback{grid-row:4;line-height:1.5;margin:5px 0;min-height:0}
+ .dock-dialog .dock-tools,.dock-dialog .panel-actions{grid-row:5;justify-content:flex-start;gap:6px;margin:7px 0 0}
+ .dock-dialog .dock-tools button,.dock-dialog .panel-actions button{min-height:36px;padding:6px 9px}
+ .dock-dialog .dock-letter p{font-size:clamp(17px,2.5vw,23px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .dock-glass-figure,.dock-ticket-tip i{transition:none}
+ .dock-bench-view.tugged .dock-ticket-tip i{animation:none}
+}
